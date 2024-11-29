@@ -19,6 +19,11 @@ Rectangle()
   .smoothShadow(color: .black.opacity(0.5), y: 10)
 ```
 
+**Parameters**
+- color: The color of the shadow.
+- x: Horizontal offset of the shadow.
+- y: Vertical offset of the shadow.
+
 ## Installation
 
 Swift Package Manager
