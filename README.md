@@ -1,6 +1,6 @@
 # SmoothShadows
 
-SmoothShadows is a SwiftUI package that lets you add customizable, smooth shadows to your views.
+SmoothShadows is a SwiftUI package that lets you add customizable, smoother shadows to your views.
 
 ## Preview
 
