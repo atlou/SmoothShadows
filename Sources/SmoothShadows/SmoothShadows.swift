@@ -8,12 +8,25 @@
 import SwiftUI
 
 public extension View {
+    /// Adds a smooth shadow to this view.
+    ///
+    /// ## Example
+    /// ```swift
+    /// Rectangle()
+    ///     .smoothShadow(color: .black.opacity(0.5), y: 10)
+    /// ```
+    ///
+    /// - Parameters:
+    ///   - color: The shadow’s color.
+    ///   - x: An amount to offset the shadow horizontally from the view.
+    ///   - y: An amount to offset the shadow vertically from the view.
+    /// - Returns: A view that adds a shadow to this view.
     func smoothShadow(color: Color = .black, x: Double = 0, y: Double = 8) -> some View {
         modifier(SmoothShadowModifier(color: color, x: x, y: y))
     }
 }
 
-public struct SmoothShadowModifier: ViewModifier {
+internal struct SmoothShadowModifier: ViewModifier {
     private struct ShadowLayer {
         let x: Double
         let y: Double
