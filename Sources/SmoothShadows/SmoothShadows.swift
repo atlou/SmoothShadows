@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-extension View {
+public extension View {
     func smoothShadow(color: Color = .black, x: Double = 0, y: Double = 8) -> some View {
-        self.modifier(SmoothShadowModifier(color: color, x: x, y: y))
+        modifier(SmoothShadowModifier(color: color, x: x, y: y))
     }
 }
 
@@ -62,15 +62,15 @@ public struct SmoothShadowModifier: ViewModifier {
     }
     
     private static func generateLayers(x: Double, y: Double) -> [ShadowLayer] {
-        let NUM_LAYERS: Int = 5
+        let NUM_LAYERS = 5
         
         var layers: [ShadowLayer] = []
-        for i in 0..<NUM_LAYERS {
+        for i in 0 ..< NUM_LAYERS {
             if i == 0 {
                 layers.append(.init(x: x, y: y, n: 1))
             } else {
                 let prev = layers[i - 1]
-                layers.append(.init(x: x, y: y, n: i+1, xOffset: prev.xOffset, yOffset: prev.yOffset))
+                layers.append(.init(x: x, y: y, n: i + 1, xOffset: prev.xOffset, yOffset: prev.yOffset))
             }
         }
         
